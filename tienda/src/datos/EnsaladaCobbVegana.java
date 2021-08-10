@@ -2,26 +2,26 @@ package tienda.src.datos;
 
 public class EnsaladaCobbVegana {
     //atributos
-   public long precio;
-   public String[] ingredientes;
-   public int calorias;
+   public boolean ConAderezo;
+   public String TipoDeLechuga;
+   public String TipoDeTomate;
 //metodos
-public long getPrecio(){
-    return this.precio;
+public boolean getConAderezo(){
+    return this.ConAderezo;
 }
-public String[] getIngredientes(){
-    return this.ingredientes;
+public String getTipoDeLechuga(){
+    return this.TipoDeLechuga;
 }
-public int getCalorias(){
-    return this.calorias;   
+public String getTipoDeTomate(){
+    return this.TipoDeTomate;
 }
-public void setPrecio(long precio){
-    this.precio = precio;
+public void setConAderezo(boolean ConAderezo){
+    this.ConAderezo = ConAderezo;
 }
-public void setingredientes(String[] ingredientes){
-    this.ingredientes = ingredientes;
+public void setTipoDeLechugar(String TipoDeLechuga){
+    this.TipoDeLechuga= TipoDeLechuga;
 }
-public void setCalorias(int calorias){
-    this.calorias = calorias;
+public void setTipoDeTomate(String TipoDeTomate){
+    this.TipoDeTomate = TipoDeTomate;
 }
 }
