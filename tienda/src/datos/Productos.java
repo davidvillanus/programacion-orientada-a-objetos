@@ -2,26 +2,26 @@ package tienda.src.datos;
 
 public class Productos {
     //Atributos
-    public String nombre ;
-    public String NombreChef;
-    public boolean stock ;
+    public String Nombre ;
+    public long Precio ;
+    public boolean Stock ;
  //metodos
  public String getNombre(){
-     return this.nombre;
+     return this.Nombre;
  }   
-public String getNombreChef(){
-    return this.NombreChef;
+public long getPrecio(){
+    return this.Precio;
 }
 public boolean getStock(){
-    return this.stock;
+    return this.Stock;
 }
-public void setNombre(String nombre){
-    this.nombre = nombre;
+public void setNombre(String Nombre){
+    this.Nombre =Nombre;
 }
-public void setNombreChef(String NombreChef){
-    this.NombreChef=NombreChef;
+public void setPrecio(long Precio){
+    this.Precio=Precio;
 }
-public void setStock(boolean stock){
-    this.stock = stock;
+public void setStock(boolean Stock){
+    this.Stock = Stock;
 }
 }
