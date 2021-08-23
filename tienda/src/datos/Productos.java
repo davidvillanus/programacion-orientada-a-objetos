@@ -5,6 +5,24 @@ public class Productos {
     public String Nombre ;
     public long Precio ;
     public boolean Stock ;
+    //constructores//
+    public Productos(String Nombre,long Precio,boolean Stock){
+        this.setNombre(Nombre);
+        this.setPrecio(Precio);
+        this.setStock(Stock);
+    }
+    public Productos(String Nombre,long Precio){
+        this(Nombre,Precio,false);
+    }
+    public Productos(){
+    }
+    //METODO TO STRING//
+    @Override
+    public String toString() {
+        return "\n"+"nombre: "+this.getNombre()+"\n"+
+        "Precio: "+this.getPrecio()+"\n"+
+        "Stock : "+this.getStock()+"\n";
+    }
  //metodos
  public String getNombre(){
      return this.Nombre;
