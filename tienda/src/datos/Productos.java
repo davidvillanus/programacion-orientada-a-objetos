@@ -1,27 +1,25 @@
-package tienda.src.datos;
+package datos;
 
-public class Productos {
+public abstract class Productos {
     //Atributos
-    public String Nombre ;
-    public long Precio ;
-    public boolean Stock ;
+    private String Nombre  ;
+    private long Precio ;
+    private boolean Stock ;
+    public abstract void Descripcion();
     //constructores//
-    public Productos(String Nombre,long Precio,boolean Stock){
+    protected Productos(String Nombre,long Precio,boolean Stock){
         this.setNombre(Nombre);
         this.setPrecio(Precio);
         this.setStock(Stock);
     }
-    public Productos(String Nombre,long Precio){
-        this(Nombre,Precio,false);
-    }
-    public Productos(){
+    protected Productos(){
     }
     //METODO TO STRING//
     @Override
     public String toString() {
         return "\n"+"nombre: "+this.getNombre()+"\n"+
         "Precio: "+this.getPrecio()+"\n"+
-        "Stock : "+this.getStock()+"\n";
+        "Stock : "+this.ToStringStock()+"\n";
     }
  //metodos
  public String getNombre(){
@@ -42,4 +40,13 @@ public void setPrecio(long Precio){
 public void setStock(boolean Stock){
     this.Stock = Stock;
 }
+public final String ToStringStock(){
+    if (Stock){
+        return "Disponible";
+    }
+    else{
+        return "No Disponible";
+    }
+
+} 
 }

@@ -1,10 +1,10 @@
-package tienda.src.datos;
+package datos;
 
-public class Pizza extends NoVegano{
+public final class Pizza extends NoVegano{
     //atributos
-    public String TipoDeHarina;
-    public String RellenoDelBorde;
-    public String Tamaño;
+    String TipoDeHarina;
+    String RellenoDelBorde;
+    String Tamaño;
     //constructores//
     public Pizza(String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ParaLlevar,int Calorias,
     boolean ConQueso,int NumeroDePorciones,boolean ConSalsa,
@@ -15,11 +15,13 @@ public class Pizza extends NoVegano{
         this.setRellenoDelBorde(RellenoDelBorde);
         this.setTamaño(Tamaño);
     }
-    public Pizza(String Nombre,long Precio,boolean Stock,String[] Ingredientes,String Tamaño) {
-        this(Nombre,Precio,true,null,false,0,false,0,false,"tipo de harina","relleno del borde",Tamaño);
-    }
     public Pizza(){
-        
+        super();
+    }
+    @Override
+    public void Descripcion(){
+        final String descripcion = "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal que tradicionalmente se cubre con salsa de tomate y queso y se hornea a alta temperatura en un horno de leña.";
+        System.out.println(descripcion);
     }
     //METODO TO STRING//
     @Override

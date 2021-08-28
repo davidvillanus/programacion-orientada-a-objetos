@@ -1,12 +1,12 @@
-package tienda.src.datos;
+package datos;
 
-public class EnsaladaCobbVegana extends Vegana{
+public final class Ensalada extends Vegana{
     //atributos
    public boolean ConAderezo;
    public String TipoDeLechuga;
    public String TipoDeTomate;
     //constructores//
-    public EnsaladaCobbVegana (String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ParaLlevar,int Calorias,
+    public Ensalada (String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ParaLlevar,int Calorias,
     boolean ConMani,int NumeroDePorciones,String TipoDeSabor,boolean ConAderezo,String TipoDeLechuga,String TipoDeTomate){
         super(Nombre,Precio,Stock,Ingredientes,ParaLlevar,Calorias,
         ConMani,NumeroDePorciones,TipoDeSabor);
@@ -14,17 +14,19 @@ public class EnsaladaCobbVegana extends Vegana{
         this.setTipoDeLechuga(TipoDeLechuga);
         this.setTipoDeTomate(TipoDeTomate);
     }
-    public EnsaladaCobbVegana(String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ConAderezo){
-        this(Nombre,Precio,false,null,false,0,false,0,"Tipo de sabor",ConAderezo,"Tipo de lechuga","Tipo de Tomate");
+    public Ensalada(){
+        super();
     }
-    public EnsaladaCobbVegana(){
-        
+    @Override
+    public void Descripcion(){
+        final String descripcion = "un plato que combina hortalizas frías (como lechuga, rúcula o espinaca) y varias verduras cortadas, mezcladas y aderezadas —fundamentalmente con sal, aceite vegetal y vinagre— a las que se suelen añadir otros alimentos";
+        System.out.println(descripcion);
     }
     //METODO TO STRING//
     @Override
     public String toString() {
         return super.toString()+
-        "Con aderezo: "+this.getConAderezo()+"\n"+
+        "Con aderezo: "+this.ToStringConAderezo()+"\n"+
         "TIpo de lechuga: "+this.getTipoDeLechuga()+"\n"+
         "TIpo de Tomate: "+this.getTipoDeTomate()+"\n"    
         ;
@@ -49,4 +51,13 @@ public void setTipoDeLechuga(String TipoDeLechuga){
 public void setTipoDeTomate(String TipoDeTomate){
     this.TipoDeTomate = TipoDeTomate;
 }
+public final String ToStringConAderezo(){
+    if (ConAderezo){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
+
+} 
 }

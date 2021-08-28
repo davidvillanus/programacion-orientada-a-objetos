@@ -1,10 +1,10 @@
-package tienda.src.datos;
+package datos;
 
-public class Cerveza extends Prefabricado {
+public final class Cerveza extends Prefabricado {
       //atributos
-      public int CantidadDeMililitros;
-      public int PorcentajeDeAlcohol;
-      public boolean EnJarra;
+      int CantidadDeMililitros;
+      int PorcentajeDeAlcohol;
+      boolean EnJarra;
     //constructores//
     public Cerveza(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
     String Marcar,String Presentacion,boolean ConGas,
@@ -14,18 +14,22 @@ public class Cerveza extends Prefabricado {
         this.setPorcentajeDeAlcohol(PorcentajeDeAlcohol);
         this.setEnJarra(EnJarra);
     }
-    public Cerveza(String Nombre,long Precio,boolean Stock,String Tamaño,String Marca,boolean EnJarra){
-        this(Nombre,Precio,Stock,0,Tamaño,0,Marca,"Presentacion",false,0,0,EnJarra);
-    }
     public Cerveza(){
+        super();
     }
+
+    @Override
+    public void Descripcion(){
+        final String descripcion = "La cerveza ​ es una bebida alcohólica, no destilada, de sabor amargo, que se fabrica con granos de cebada germinados u otros cereales cuyo almidón se fermenta en agua con levadura y se aromatiza a menudo con lúpulo";
+        System.out.println(descripcion);
+}
     //METODO TO STRING//
     @Override
     public String toString() {
         return super.toString()+
         "Cantidad de mililitros: "+this.getCantidadDeMililitros()+"\n"+
         "Porcentaje de alcohol: "+this.getPorcentajeDeAlcohol()+"\n"+
-        "En jarra: "+this.getEnJarra()+"\n"
+        "En jarra: "+this.ToStringEnJarra()+"\n"
 
         ;
     }   
@@ -48,5 +52,14 @@ public void setPorcentajeDeAlcohol(int PorcentajeDeAlcohol ){
 }
 public void setEnJarra(boolean EnJarra){
     this.EnJarra = EnJarra;
+}
+public final String ToStringEnJarra(){
+    if (EnJarra){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
+
 } 
 }

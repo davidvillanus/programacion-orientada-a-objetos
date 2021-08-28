@@ -1,10 +1,10 @@
-package tienda.src.datos;
+package datos;
 
-public class Hamburguesa extends NoVegano {
+public final class Hamburguesa extends NoVegano {
       //atributos
-      public String TipoDeCarne;
-      public String TipoDePan;
-      public String[] Salsas;
+       String TipoDeCarne;
+       String TipoDePan;
+       String[] Salsas;
     //constructores//
     public Hamburguesa(String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ParaLlevar,int Calorias,
     boolean ConQueso,int NumeroDePorciones,boolean ConSalsa,
@@ -15,11 +15,14 @@ public class Hamburguesa extends NoVegano {
         this.setTipoDePan(TipoDePan);
         this.setSalsas(Salsas);
     }
-    public Hamburguesa(String Nombre,long Precio,boolean Stock,String[] Ingredientes,String[] Salsas) {
-        this(Nombre,Precio,true,null,false,0,false,0,false,"tipo de carne","tipo de pan",Salsas);
-    }
+
     public Hamburguesa(){
-        
+        super();
+    }
+    @Override
+    public void Descripcion(){
+        final String descripcion = "Una hamburguesa es un sándwich hecho a base de carne molida o de origen vegetal, aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse.";
+        System.out.println(descripcion);
     }
     //METODO TO STRING//
     @Override

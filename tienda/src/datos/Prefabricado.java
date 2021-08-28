@@ -1,22 +1,21 @@
-package tienda.src.datos;
+package datos;
 
-public class Prefabricado extends Bebida{
+public abstract class Prefabricado extends Bebida{
       //atributos
-   public String Marca;
-   public String Presentacion;
-   public boolean ConGas;
+   private String Marca;
+   private String Presentacion;
+   private boolean ConGas;
     //constructores//
-    public Prefabricado(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
+    protected Prefabricado(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
     String Marcar,String Presentacion,boolean ConGas){
         super(Nombre,Precio,Stock,TemperaturaGradosC,Tamaño,Calorias);
         this.setMarca(Marca);
         this.setPresentacion(Presentacion);
         this.setConGas(ConGas);
     }
-    public Prefabricado(String Nombre,long Precio,boolean Stock,String Tamaño,String Marca){
-        this(Nombre,Precio,Stock,0,Tamaño,0,Marca,"Presentacion",false);
-    }
-    public Prefabricado(){
+
+    protected Prefabricado(){
+        super();
     }
     //METODO TO STRING//
     @Override
@@ -24,7 +23,7 @@ public class Prefabricado extends Bebida{
         return super.toString()+
         "Marca: "+this.getMarca()+"\n"+
         "Presentacion: "+this.getPresentacion()+"\n"+
-        "Con gas: "+this.getConGas()+"\n"
+        "Con gas: "+this.ToStringConGas()+"\n"
 
         ;
     }   
@@ -49,5 +48,13 @@ public void setPresentacion(String Presentacion){
 public void setConGas(boolean ConGas){
     this.ConGas = ConGas;
 }
+public final String ToStringConGas(){
+    if (ConGas){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
 
+}
 }

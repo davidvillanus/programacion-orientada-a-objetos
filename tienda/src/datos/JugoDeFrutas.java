@@ -1,10 +1,10 @@
-package tienda.src.datos;
+package datos;
 
-public class JugoDeFrutas extends Fabricado {
+public final class JugoDeFrutas extends Fabricado {
        //atributos
-   public boolean ConPulpa;
-   public String TipoDeEndulzante;
-   public boolean Leche;
+    boolean ConPulpa;
+   String TipoDeEndulzante;
+    boolean Leche;
     //constructores//
     public JugoDeFrutas(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
     String TipoDeSabor,boolean Endulzante,boolean Pitillo,
@@ -15,19 +15,21 @@ public class JugoDeFrutas extends Fabricado {
         this.setTipoDeEndulzante(TipoDeEndulzante);
         this.setLeche(Leche);
     }
-    public JugoDeFrutas(String Nombre,long Precio,boolean Stock,String Tamaño,String TipoDeSabor,
-    boolean Leche){
-        this(Nombre,Precio,Stock,0,Tamaño,0,TipoDeSabor,false,false,false,"Tipo de endulzante",Leche);
-    }
     public JugoDeFrutas(){
+        super();
+    }
+    @Override
+    public void Descripcion(){
+        final String descripcion = "es una sustancia líquida extraída de las frutas, generalmente al exprimirlas por presión";
+        System.out.println(descripcion);
     }
     //METODO TO STRING//
     @Override
     public String toString() {
         return super.toString()+
-        "Tipo de sabor: "+this.getTipoDeSabor()+"\n"+
-        "Endulzante: "+this.getEndulzante()+"\n"+
-        "Pitillo: "+this.getPitillo()+"\n"
+        "Con pulpa: "+this.ToStringConPulpa()+"\n"+
+        "Tipo de endulzante: "+this.getEndulzante()+"\n"+
+        "Con leche: "+this.ToStringLeche()+"\n"
 
         ;
     }   
@@ -50,5 +52,24 @@ public void setTipoDeEndulzante(String TipoDeEndulzante){
 }
 public void setLeche(boolean Leche){
     this.Leche = Leche;
-}   
+} 
+
+public final String ToStringConPulpa(){
+    if (ConPulpa){
+        return "Si";
+    }
+    else{
+        return "No ";
+    }
+
+} 
+public final String ToStringLeche(){
+    if (Leche){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
+
+}
 }

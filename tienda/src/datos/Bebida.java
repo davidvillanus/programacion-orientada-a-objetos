@@ -1,21 +1,19 @@
-package tienda.src.datos;
+package datos;
 
-public class Bebida extends Productos {
+public abstract class Bebida extends Productos {
    //atributos
-   public int TemperaturaGradosC;
-   public String Tamaño;
-   public int Calorias;
+   private int TemperaturaGradosC;
+   private String Tamaño;
+   private int Calorias;
     //constructores//
-    public Bebida(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias){
+    protected Bebida(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias){
         super(Nombre,Precio,Stock);
         this.setTemperaturaGradosC(TemperaturaGradosC);
         this.setTamaño(Tamaño);
         this.setCalorias(Calorias);
     }
-    public Bebida(String Nombre,long Precio,boolean Stock,String Tamaño){
-        this(Nombre,Precio,Stock,0,Tamaño,0);
-    }
-    public Bebida(){
+    protected Bebida(){
+        super();
     }
     //METODO TO STRING//
     @Override

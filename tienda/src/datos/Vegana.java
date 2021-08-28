@@ -1,29 +1,28 @@
-package tienda.src.datos;
+package datos;
 
-public class Vegana extends Comida {
+public abstract class Vegana extends Comida {
     //atributos
-    public boolean ConMani;
-    public int NumeroDePorciones;
-    public String TipoDeSabor;
+    private boolean ConMani;
+    private int NumeroDePorciones;
+    private String TipoDeSabor;
     //constructores//
-    public Vegana(String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ParaLlevar,int Calorias,
+    protected Vegana(String Nombre,long Precio,boolean Stock,String[] Ingredientes,boolean ParaLlevar,int Calorias,
     boolean ConMani,int NumeroDePorciones,String TipoDeSabor){
     super(Nombre,Precio,Stock,Ingredientes,ParaLlevar,Calorias);
     this.setConMani(ConMani);
     this.setNumeroDePorciones(NumeroDePorciones);
     this.setTipoDeSabor(TipoDeSabor);
     }
-    public Vegana(String Nombre,long Precio,boolean Stock,String[] Ingredientes){
-        this(Nombre,Precio,false,null,false,0,false,0,"Tipo de sabor");
-    }
-    public Vegana(){
+    
+    protected Vegana(){
+        super();
         
     }
     //METODO TO STRING//
     @Override
     public String toString() {
         return super.toString()+
-        "Con mani: "+this.getConMani()+"\n"+
+        "Con mani: "+this.ToStringConMani()+"\n"+
         "Numero de porciones: "+this.getNumeroDePorciones()+"\n"+
         "TIpo de sabor: "+this.getTipoDeSabor()+"\n"    
         ;
@@ -47,4 +46,13 @@ public void setNumeroDePorciones(int numeroDePorciones){
 public void setTipoDeSabor(String tipoDeSabor){
     this.TipoDeSabor = tipoDeSabor;
 }
+public final String ToStringConMani(){
+    if (ConMani){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
+
+} 
 }

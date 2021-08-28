@@ -1,30 +1,28 @@
-package tienda.src.datos;
+package datos;
 
-public class Fabricado extends Bebida {
+public abstract class Fabricado extends Bebida {
    //atributos
-   public String TipoDeSabor;
-   public boolean Endulzante;
-   public boolean Pitillo;
+   private String TipoDeSabor;
+   private boolean Endulzante;
+   private boolean Pitillo;
     //constructores//
-    public Fabricado(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
+    protected Fabricado(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
     String TipoDeSabor,boolean Endulzante,boolean Pitillo){
         super(Nombre,Precio,Stock,TemperaturaGradosC,Tamaño,Calorias);
         this.setTipoDeSabor(TipoDeSabor);
         this.setEndulzante(Endulzante);
         this.setPitillo(Pitillo);
     }
-    public Fabricado(String Nombre,long Precio,boolean Stock,String Tamaño,String TipoDeSabor){
-        this(Nombre,Precio,Stock,0,Tamaño,0,TipoDeSabor,false,false);
-    }
-    public Fabricado(){
+    protected Fabricado(){
+        super();
     }
     //METODO TO STRING//
     @Override
     public String toString() {
         return super.toString()+
         "Tipo de sabor: "+this.getTipoDeSabor()+"\n"+
-        "Endulzante: "+this.getEndulzante()+"\n"+
-        "Pitillo: "+this.getPitillo()+"\n"
+        "Endulzante: "+this.ToStringEndulzante()+"\n"+
+        "Pitillo: "+this.ToStringPitillo()+"\n"
 
         ;
     }   
@@ -47,5 +45,23 @@ public void setEndulzante(boolean Endulzante){
 }
 public void setPitillo(boolean Pitillo){
     this.Pitillo = Pitillo;
-}    
+} 
+public final String ToStringPitillo(){
+    if (Pitillo){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
+
+}
+public final String ToStringEndulzante(){
+    if (Endulzante){
+        return "Si";
+    }
+    else{
+        return "No";
+    }
+
+}   
 }
