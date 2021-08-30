@@ -1,8 +1,12 @@
 body {
+    background: yellow;
+    color: blue;
+    background-color: #f8d700;
     margin: 0;
     padding: 0;
     font-size: 100%;
     line-height: 1.5
+
 }
 
 h1, h2, h3, h4 {
