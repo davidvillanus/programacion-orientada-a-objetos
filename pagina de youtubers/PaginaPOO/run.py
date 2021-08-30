@@ -24,8 +24,8 @@ def index():
     return render_template("index.html", posts=posts)
 
 
-@app.route("/p/<string:slug>/")
-def show_post(slug):
+@app.route("/p/<string:asign>/<string:autor>/<string:tema>/<string:slug>/")
+def show_post(slug, asign, tema, autor):
     post = Post.get_by_slug(slug)
     if post is None:
         abort(404)
@@ -37,11 +37,17 @@ def show_post(slug):
 @login_required
 def post_form(post_id):
     form = PostForm()
-    if form.validate_on_submit():
+    isAdmin = current_user.is_admin
+    if isAdmin == False:
+        abort(404)
+    elif form.validate_on_submit():
         title = form.title.data
         content = form.content.data
+        asignatura = form.asignatura.data
+        tema = form.tema.data
+        autor = form.autor.data
 
-        post = Post(user_id=current_user.id, title=title, content=content)
+        post = Post(user_id=current_user.id, title=title, content=content, asignatura=asignatura, tema=tema, autor=autor)
         post.save()
 
         return redirect(url_for('index'))

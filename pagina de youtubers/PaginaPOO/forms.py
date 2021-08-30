@@ -20,5 +20,8 @@ class LoginForm(FlaskForm):
 class PostForm(FlaskForm):
     title = StringField('Título', validators=[DataRequired(), Length(max=128)])
     title_slug = StringField('Título slug', validators=[Length(max=128)])
+    asignatura = StringField('Asignatura', validators=[Length(max=128)])
+    tema = StringField('Tema', validators=[Length(max=128)])
+    autor = StringField('Autor/a', validators=[Length(max=128)])
     content = TextAreaField('Contenido')
     submit = SubmitField('Enviar')

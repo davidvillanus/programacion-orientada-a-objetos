@@ -44,6 +44,9 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('blog_user.id', ondelete='CASCADE'), nullable=False)
     title = db.Column(db.String(256), nullable=False)
     title_slug = db.Column(db.String(256), unique=True, nullable=False)
+    asignatura = db.Column(db.String(256), nullable=False)
+    tema = db.Column(db.String(256), nullable=False)
+    autor = db.Column(db.String(256), nullable=False)
     content = db.Column(db.Text)
 
     def __repr__(self):
@@ -66,7 +69,7 @@ class Post(db.Model):
                 self.title_slug = f'{self.title_slug}-{count}'
 
     def public_url(self):
-        return url_for('show_post', slug=self.title_slug)
+        return url_for('show_post', slug=self.title_slug, asign=self.asignatura, tema=self.tema, autor=self.autor)
 
     @staticmethod
     def get_by_slug(slug):
