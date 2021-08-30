@@ -3,7 +3,6 @@
 {% block title %}Primer pagina web uwu{% endblock %}
 
 {% block content %}
-    <h1>Yolo :v</H1>
     <ul>
     {% for post in posts %}
         <li><a href="{{ post.public_url() }}">{{ post.title }}</a></li>

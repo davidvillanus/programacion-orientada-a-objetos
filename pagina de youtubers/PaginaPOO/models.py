@@ -3,7 +3,7 @@ from flask_login import UserMixin
 from slugify import slugify
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
-from run import db
+from app import db
 
 
 class User(db.Model, UserMixin):
