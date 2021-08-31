@@ -9,45 +9,54 @@
 {% endblock %}
 
 {% block content %}
+<div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Log in to Codepen</h3>
+		<div class="card-text">
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
-        <div>
+        <div class="form-group">
             {{ form.title.label }}
             {{ form.title(size=128) }}<br>
             {% for error in form.title.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
-        <div>
+        <div class="form-group">
             {{ form.asignatura.label }}
             {{ form.asignatura(size=128) }}<br>
             {% for error in form.asignatura.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
-	<div>
+	<div class="form-group">
             {{ form.tema.label }}
             {{ form.tema(size=128) }}<br>
             {% for error in form.tema.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
-	<div>
+	<div class="form-group">
             {{ form.autor.label }}
             {{ form.autor(size=128) }}<br>
             {% for error in form.autor.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
-        <div>
+        <div class="form-group">
             {{ form.content.label }}
             {{ form.content }}<br>
             {% for error in form.content.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
-        <div>
+        <div class="sign-up">
             {{ form.submit() }}
         </div>
     </form>
+</div>
+</div>
+</div>
+</div>
 {% endblock %}

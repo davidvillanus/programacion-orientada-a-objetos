@@ -5,7 +5,6 @@ from werkzeug.urls import url_parse
 
 from forms import SignupForm, PostForm, LoginForm
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b23a5d1616bf319bc298105da20fe'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pi:lusho@186.80.128.29:5432/pi'
@@ -22,6 +21,11 @@ from models import User, Post
 def index():
     posts = Post.get_all()
     return render_template("index.html", posts=posts)
+
+@app.route("/<string:asign>")
+def category(asign):
+    posts = Post.get_all()
+    return render_template("asignaturas.html", posts=posts)
 
 
 @app.route("/p/<string:asign>/<string:autor>/<string:tema>/<string:slug>/")
@@ -107,3 +111,7 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+if __name__ == '__name__':
+    app.run(debug=True)

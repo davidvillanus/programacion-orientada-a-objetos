@@ -1,14 +1,24 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
 body {
     background-color: rgb(92, 143, 143);
     color: rgb(16, 16, 54);
-    background-color: #a32424;
+    background-color: #db9b9b;
     margin: 0;
     padding: 80 px;
     font-size: 100%;
     line-height: 1.5
 
 }
-
+a{
+    color: blue;
+    text-decoration: none;
+}
 h1, h2, h3, h4 {
     margin: 1em 0 .5em;
     line-height: 1.25
@@ -46,12 +56,75 @@ sup, sub {
 
 .user-info {
     list-style: none;
-    margin: 0;
+    margin: 10;
     padding: 0;
 }
 
 .user-info li {
     display: inline-block;
-    margin: 0;
+    margin: 10;
     padding: 0 10px 0 0;
+}
+.nav-main{
+    font-size: 17px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+}
+/* navegacion izquierda*/
+.nav-main ul{
+    display: flex;
+}
+.nav-main ul li{
+    padding: 10px;
+}
+.nav-main ul li a:hover{
+    border-bottom: 2px solid white;
+}
+.nav-main ul.nav-menu {
+    flex: 1;
+    margin-left: 20px;
+}
+html,body { 
+	height: 100%; 
+}
+
+.global-container{
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f5f5;
+}
+
+form{
+	padding-top: 10px;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
+.card-title{ font-weight:300; }
+
+.btn{
+	font-size: 14px;
+	margin-top:20px;
+}
+
+
+.login-form{ 
+	width:330px;
+	margin:20px;
+}
+
+.sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+.alert{
+	margin-bottom:-30px;
+	font-size: 13px;
+	margin-top:20px;
 }
