@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+
+{% block title %} Autor {% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <li><a href="{{ url_for('autor', asign=post.asignatura, autor=post.autor) }}">{{ post.autor }}</a></li>
+    {% endfor %}
+{% endblock %}

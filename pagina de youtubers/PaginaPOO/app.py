@@ -22,11 +22,20 @@ def index():
     posts = Post.get_all()
     return render_template("index.html", posts=posts)
 
-@app.route("/<string:asign>")
+@app.route("/p/<string:asign>")
 def category(asign):
-    posts = Post.get_all()
-    return render_template("asignaturas.html", posts=posts)
+    posts = Post.get_by_asign(asign)
+    return render_template("asignatura.html", posts=posts)
 
+@app.route("/p/<string:asign>/<string:autor>")
+def autor(asign, autor):
+    posts = Post.get_by_autor(autor, asign)
+    return render_template("autor.html", posts=posts)
+
+@app.route("/p/<string:asign>/<string:autor>/<string:tema>")
+def tema(asign, autor, tema):
+    posts = Post.get_by_tema(autor, asign, tema)
+    return render_template("tema.html", posts=posts)
 
 @app.route("/p/<string:asign>/<string:autor>/<string:tema>/<string:slug>/")
 def show_post(slug, asign, tema, autor):
@@ -91,7 +100,7 @@ def load_user(user_id):
     return User.get_by_id(int(user_id))
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login/', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))

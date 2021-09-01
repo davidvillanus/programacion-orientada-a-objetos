@@ -71,10 +71,26 @@ class Post(db.Model):
     def public_url(self):
         return url_for('show_post', slug=self.title_slug, asign=self.asignatura, tema=self.tema, autor=self.autor)
 
+    def asign_url(self):
+        return url_for('category', asign=self.asignatura)
+
     @staticmethod
     def get_by_slug(slug):
         return Post.query.filter_by(title_slug=slug).first()
 
     @staticmethod
+    def get_by_asign(asign):
+        return Post.query.filter_by(asignatura=asign).distinct(Post.autor)
+
+    @staticmethod
+    def get_by_autor(autor, asign):
+        return Post.query.filter_by(autor=autor).filter_by(asignatura=asign).distinct(Post.tema)
+
+    @staticmethod
+    def get_by_tema(autor, asign, tema):
+        return Post.query.filter_by(autor=autor).filter_by(asignatura=asign).filter_by(tema=tema).all()
+
+    @staticmethod
     def get_all():
-        return Post.query.all()
+        #return Post.query.all()
+        return Post.query.distinct(Post.asignatura)

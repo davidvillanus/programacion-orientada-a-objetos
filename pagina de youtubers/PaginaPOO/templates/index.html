@@ -1,11 +1,261 @@
 {% extends "base_template.html" %}
 
-{% block title %}Primer pagina web uwu{% endblock %}
+{% block title %}YouAcademics{% endblock %}
+
 
 {% block content %}
-    <ul>
-    {% for post in posts %}
-        <li><a href="/asignaturas">{{ post.asignatura }}</a></li>
-    {% endfor %}
-    </ul>
+
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  <div class="feature col">
+    <div class="feature-icon bg-primary bg-gradient">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+    </div>
+    <h2>Featured title</h2>
+    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+    <a href="#" class="icon-link">
+      Call to action
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+    </a>
+  </div>
+  <div class="feature col">
+    <div  i class="bi bi-play-fill"> </div>
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
+    </div>
+    <h2>Featured title</h2>
+    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+    <a href="#" class="icon-link">
+      Call to action
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+    </a>
+  </div>
+  <div class="feature col">
+    <div class="feature-icon bg-primary bg-gradient">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+    </div>
+    <h2>Featured title</h2>
+    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+    <a href="#" class="icon-link">
+      Call to action
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+    </a>
+  </div>
+</div>
+
+
+<!-- Introducción  -->
+<section id="intro">
+  <ul id="slippry-slider">
+    <li>
+      <a href="#slide1"><img src="assets/img/slide/1.jpg" alt="Bienvenidos a YouAcademic!"></a>
+    </li>
+    <li>
+      <a href="#slide2"><img src="assets/img/slide/2.jpg"  alt="Comparte para más contenido :3"></a>
+    </li>
+    <li>
+      <a href="#slide3"><img src="assets/img/slide/3.jpg" alt="Contáctanos para más información"></a>
+    </li>
+  </ul>
+</section>
+<!-- fin de introduciión -->
+
+<!-- Sección acerca de nosotros -->
+<section id="about" class="section">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="heading">
+          <h3><span>Nosotros</span></h3>
+        </div>
+        <div class="sub-heading">
+          <p>
+            Queremos que aprendas muchas cosas.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="assets/img/dummies/team1.jpg" alt="" class="img-responsive" />
+          <div class="roles">
+            <h5><strong>Brayan Maldonado</strong></h5>
+            <p>
+              Creador
+            </p>
+            <ul class="social-profile">
+              <li><a href="https://www.facebook.com/brayan.maldonado.35513/"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="assets/img/dummies/team2.jpg" alt="" class="img-responsive" />
+          <div class="roles">
+            <h5><strong>Luis Hernández</strong></h5>
+            <p>
+              Creador
+            </p>
+            <ul class="social-profile">
+              <li><a href="https://www.facebook.com/DongnutLa/"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="assets/img/dummies/team3.jpg" alt="" class="img-responsive" />
+          <div class="roles">
+            <h5><strong>David Camelo</strong></h5>
+            <p>
+              Creador
+            </p>
+            <ul class="social-profile">
+              <li><a href="https://www.facebook.com/TaurusFansub"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="assets/img/dummies/team4.jpg" alt="" class="img-responsive" />
+          <div class="roles">
+            <h5><strong>Andrés Galeano</strong></h5>
+            <p>
+              Creador
+            </p>
+            <ul class="social-profile">
+              <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+              <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de sección-->
+<!-- sección contenido -->
+<h1 class="text-center">Asignaturas</h1>
+
+{% for post in posts %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{ post.asignatura }}.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.asignatura }}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="{{ url_for('category', asign=post.asignatura) }}" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+{% endfor %}
+<!--fin de la sección -->
+
+<!-- sección contáctanos -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="heading">
+          <h3><span>Pónte en contácto con nosotros</span></h3>
+        </div>
+        <div class="sub-heading">
+          <p>
+            Si requieres de un asesoramiento o has encontrado un error haznoslo saber.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4><i class="icon-envelope"></i><strong>Formulario de Contacto</strong></h4>
+        <p>
+          ¿Quieres trabajar con nosotros o simplemente quieres saludar? No dudes en contactarnos. 
+        </p>
+        <!-- inicio del formulario-->
+        <div class="cform" id="contact-form">
+
+
+          <div id="sendmessage">Tu mensaje se ha enviado correctamente, gracias!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" data-rule="minlen:3" data-msg="Por favor ingresar mínimo 3 caracteres" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo" data-rule="email" data-msg="Por favor introducir un correo válido" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+              <div class="validation"></div>
+            </div>
+
+            <div class="text-center"><button type="submit" class="btn btn-lg btn-theme">Enviar</button></div>
+          </form>
+        </div>
+        <!-- final del formulario -->
+      </div>
+      <!--<div class="col-md-6">
+        <h4>Ubicación</h4>
+        <p>Ver por maps</p>
+        <mapa>
+        <div id="section-map" class="clearfix">
+          <div id="google-map" data-latitude="40.713732" data-longitude="-74.0092704"></div>
+        </div>
+      </div> --> 
+    </div>
+  </div>
+</section>
+<!--fin sección contáctanos -->
+
+<!--Inicio Footer -->
+<footer>
+  <div class="verybottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aligncenter">
+            <ul class="social-network social-circle">
+              <!--<li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li> 
+              <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aligncenter">
+            <p>
+              &copy; YouAcademics - Derechos reservados
+            </p>
+            <div class="credits">
+           
+              <!--<a href="https://www.youtube.com/channel/UCDH0DJaVLkCDtl_YN9hhByw/featured?view_as=subscriber">ProOnliPc Themes</a> by <a href="https://www.youtube.com/channel/UCDH0DJaVLkCDtl_YN9hhByw/featured?view_as=subscriber">ProOnliPc</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--Fin del Footer -->
+
 {% endblock %}

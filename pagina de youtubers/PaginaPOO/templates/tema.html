@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+
+{% block title %} Temas {% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <li><a href="{{ url_for('show_post', slug=post.title_slug, asign=post.asignatura, autor=post.autor, tema=post.tema) }}">{{ post.title }}</a></li>
+    {% endfor %}
+{% endblock %}
