@@ -2,50 +2,120 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!--<title>PAGINA | YOUTUBERS</title>-->
 <!--   <meta name="description" content="Página web youtubers creada para el proyecto de poo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Brayan Maldonado, Luis Hernández, David Camelo, Andrés Galeanoo" /> -->
-
-    <!-- estilos 
-  <link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
-  <link href="assets/css/bootstrap.css" rel="stylesheet" />
-  <link href="assets/css/bootstrap-theme.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/slippry.css">
-  <link href="assets/css/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/color/default.css">
-  <script src="assets/js/modernizr.custom.js"></script>
-  -->
-
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <title>{% block title %}{% endblock %}</title>
   <!-- <link rel="stylesheet" href="{{ url_for("static", filename="base.css") }}" /> -->
+
+  <style>
+    #logo{
+      padding-right: 5px;
+  
+    }
+    #youacademicsize{
+      font-size: 43px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    }
+
+    #YouAcademicTitle{
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 22px;
+      padding-left: 20px;
+    }   
+
+    #BarraBuscar{
+      padding-top: 23px;
+      padding-right: 20px;
+      position: absolute;
+      height:100%;
+      width:35%;
+      right:20px;
+    }
+
+    #botoniniciar{
+      text-align: center;
+    }
+
+    #registrarse{
+      padding-bottom: 5px;
+    }
+
+    #formulario2{
+      padding-top: 5px;
+    }
+
+   #correo2{
+     border-bottom: 2px solid rgb(110, 105, 105);
+     border-left: 2px solid rgb(110, 105, 105);
+     border-right: 2px solid rgb(110, 105, 105); 
+     background-color: lightblue;
+   }
+
+   #correo{
+    padding-top: 15px;
+    border-top: 2px solid rgb(110, 105, 105);
+    border-left: 2px solid rgb(110, 105, 105);
+    border-right: 2px solid rgb(110, 105, 105);
+    background-color: lightblue;
+   }
+
+    #formulario{
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+
+    #registrate{
+      text-align: center;
+    }
+
+    #carrusel1{
+      height: 800px;
+    }
+    
+    #asignaturas{
+      padding-top:150px;
+      padding-bottom:150px;
+    }
+    
+    .text-center{
+      padding-top:5px;
+      padding-bottom:5px;
+    }
+
+    #about{
+      border: 3px solid rgb(209, 204, 204);
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .contactanos{
+      padding-top: 80px;
+    }
+    
+    #about{
+      background-color: rgb(250, 247, 244);
+    }
+  </style>
+
 </head>
 
 <body>
 
   {% include 'navbar.html'%}
-  <!-- Introducción  -->
-  <section id="intro">
-    <ul id="slippry-slider">
-      <li>
-        <a href="#slide1"><img src="assets/img/slide/1.jpg" alt="Bienvenidos a YouAcademic!"></a>
-      </li>
-      <li>
-        <a href="#slide2"><img src="assets/img/slide/2.jpg"  alt="Comparte para más contenido :3"></a>
-      </li>
-      <li>
-        <a href="#slide3"><img src="assets/img/slide/3.jpg" alt="Contáctanos para más información"></a>
-      </li>
-    </ul>
-  </section>
-  <!-- fin de introduciión -->
 
 
   {% block content %}{% endblock %}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+ 
+
 
 
 </body>

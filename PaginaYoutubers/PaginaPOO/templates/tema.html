@@ -1,9 +1,21 @@
 {% extends "base_template.html" %}
 
-{% block title %} Temas {% endblock %}
+{% block title %} Contenido {% endblock %}
 
 {% block content %}
-    {% for post in posts %}
-        <li><a href="{{ url_for('show_post', slug=post.title_slug, asign=post.asignatura, autor=post.autor, tema=post.tema) }}">{{ post.title }}</a></li>
-    {% endfor %}
+
+<h1 class="text-center">Contenido</h1>
+
+<div class="container overflow-hidden">
+    <div class="row gy-5">
+      {% for post in posts %}
+      <div class="col-6 text-center">
+        <div class="p-3 border bg-light">
+          <a href="{{ url_for('show_post', slug=post.title_slug, asign=post.asignatura, autor=post.autor, tema=post.tema) }}" class="btn btn-dark btn-lg">{{ post.title }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
 {% endblock %}

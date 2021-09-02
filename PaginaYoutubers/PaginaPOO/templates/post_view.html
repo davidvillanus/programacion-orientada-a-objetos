@@ -3,6 +3,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    {{ post.content }}
+    <h1 class="text-center">{{ post.title }}</h1>
+    <a class="text-center"><iframe width="560" height="315" src="{{ post.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
+    <p class="text-center">{{ post.content }}</p>
 {% endblock %}

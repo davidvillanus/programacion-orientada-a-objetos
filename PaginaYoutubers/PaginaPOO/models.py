@@ -14,7 +14,8 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(256), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=False)
-    is_admin = db.Column(db.Boolean, default=False)
+    nickname = db.Column(db.String(80), unique=True, nullable=False)
+    is_admin = db.Column(db.Boolean, default=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -38,6 +39,10 @@ class User(db.Model, UserMixin):
     def get_by_email(email):
         return User.query.filter_by(email=email).first()
 
+    @staticmethod
+    def get_by_nick(nickname):
+        return User.query.filter_by(nickname=nickname).first()
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -48,6 +53,7 @@ class Post(db.Model):
     tema = db.Column(db.String(256), nullable=False)
     autor = db.Column(db.String(256), nullable=False)
     content = db.Column(db.Text)
+    url = db.Column(db.String(256))
 
     def __repr__(self):
         return f'<Post {self.title}>'
@@ -69,10 +75,7 @@ class Post(db.Model):
                 self.title_slug = f'{self.title_slug}-{count}'
 
     def public_url(self):
-        return url_for('show_post', slug=self.title_slug, asign=self.asignatura, tema=self.tema, autor=self.autor)
-
-    def asign_url(self):
-        return url_for('category', asign=self.asignatura)
+        return url_for('show_post', slug=self.title_slug, asign=self.asignatura, tema=self.tema, autor=self.autor, url=self.url)
 
     @staticmethod
     def get_by_slug(slug):
@@ -94,3 +97,26 @@ class Post(db.Model):
     def get_all():
         #return Post.query.all()
         return Post.query.distinct(Post.asignatura)
+
+    @staticmethod
+    def get_all_data():
+        return Post.query.all()
+
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(80), nullable=False)
+    correo = db.Column(db.String(256), nullable=False)
+    asunto = db.Column(db.String(256), nullable=False)
+    mensaje = db.Column(db.Text)
+
+    def __repr__(self):
+        return f'<Contact {self.nombre}>'
+
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
+
+    @staticmethod
+    def get_by_id(id):
+        return User.query.get(id)

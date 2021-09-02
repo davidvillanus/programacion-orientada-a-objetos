@@ -47,6 +47,13 @@
                 {% endfor %}
             </div>
             <div class="mw-60 p-3"style="width: 400px;">
+                {{ form.url.label(class="form-label") }}
+                {{ form.url(class="form-control") }}<br>
+                {% for error in form.url.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="mw-60 p-3"style="width: 400px;">
                 {{ form.content.label(class="form-label") }}
                 {{ form.content(class="form-control") }}<br>
                 {% for error in form.content.errors %}

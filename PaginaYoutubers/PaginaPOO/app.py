@@ -3,7 +3,7 @@ from flask_login import LoginManager, logout_user, current_user, login_user, log
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.urls import url_parse
 
-from forms import SignupForm, PostForm, LoginForm
+from forms import ContactForm, SignupForm, PostForm, LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b23a5d1616bf319bc298105da20fe'
@@ -14,13 +14,23 @@ login_manager = LoginManager(app)
 login_manager.login_view = "login"
 db = SQLAlchemy(app)
 
-from models import User, Post
+from models import Contact, User, Post
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
     posts = Post.get_all()
-    return render_template("index.html", posts=posts)
+    form = ContactForm()
+    if form.validate_on_submit():
+        nombre = form.nombre.data
+        correo = form.correo.data
+        asunto = form.asunto.data
+        mensaje = form.mensaje.data
+    
+        contact = Contact(nombre=nombre, correo=correo, asunto=asunto, mensaje=mensaje)
+        contact.save()
+
+    return render_template("index.html", posts=posts, form=form)
 
 @app.route("/p/<string:asign>")
 def category(asign):
@@ -59,8 +69,9 @@ def post_form(post_id):
         asignatura = form.asignatura.data
         tema = form.tema.data
         autor = form.autor.data
+        url = form.url.data
 
-        post = Post(user_id=current_user.id, title=title, content=content, asignatura=asignatura, tema=tema, autor=autor)
+        post = Post(user_id=current_user.id, title=title, content=content, asignatura=asignatura, tema=tema, autor=autor, url=url)
         post.save()
 
         return redirect(url_for('index'))
@@ -74,16 +85,20 @@ def show_signup_form():
     form = SignupForm()
     error = None
     if form.validate_on_submit():
+        nickname = form.nickname.data
         name = form.name.data
         email = form.email.data
         password = form.password.data
-        # Comprobamos que no hay ya un usuario con ese email
+        # Comprobamos que no hay ya un usuario con ese email y nickname
         user = User.get_by_email(email)
+        user2 = User.get_by_nick(nickname)
         if user is not None:
             error = f'El email {email} ya está siendo utilizado por otro usuario'
+        elif user2 is not None:
+            error = f'El usuario {nickname} ya está siendo usado por otra persona'
         else:
             # Creamos el usuario y lo guardamos
-            user = User(name=name, email=email)
+            user = User(name=name, email=email, nickname=nickname)
             user.set_password(password)
             user.save()
             # Dejamos al usuario logueado

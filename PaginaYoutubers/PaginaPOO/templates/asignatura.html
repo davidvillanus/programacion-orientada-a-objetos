@@ -3,7 +3,19 @@
 {% block title %} Autor {% endblock %}
 
 {% block content %}
+
+<h1 class="text-center">Autores/as</h1>
+
+<div class="container overflow-hidden">
+  <div class="row gy-5">
     {% for post in posts %}
-        <li><a href="{{ url_for('autor', asign=post.asignatura, autor=post.autor) }}">{{ post.autor }}</a></li>
+    <div class="col-6 text-center">
+      <div class="p-3 border bg-light">
+        <a href="{{ url_for('autor', asign=post.asignatura, autor=post.autor) }}" class="btn btn-dark btn-lg">{{ post.autor }}</a>
+      </div>
+    </div>
     {% endfor %}
+  </div>
+</div>
+
 {% endblock %}
