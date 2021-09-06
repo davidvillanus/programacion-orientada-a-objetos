@@ -1,9 +1,0 @@
-{% extends "base_template.html" %}
-
-{% block title %} Entradas {% endblock %}
-
-{% block content %}
-    {% for post in posts %}
-        <li><a href="#">{{ post.title }}</a></li>
-    {% endfor %}
-{% endblock %}

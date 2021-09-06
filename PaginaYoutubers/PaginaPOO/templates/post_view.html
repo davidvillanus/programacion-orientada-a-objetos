@@ -3,7 +3,13 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
+
     <h1 class="text-center">{{ post.title }}</h1>
-    <a class="text-center"><iframe width="560" height="315" src="{{ post.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
-    <p class="text-center">{{ post.content }}</p>
+        <div id="ytemb">
+            <div class="w-auto p-3">
+                <div class="ratio ratio-16x9">
+                    <iframe src="{{ post.url }}" title="{{ post.title }}" frameborder="0px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
 {% endblock %}
