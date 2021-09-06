@@ -2,8 +2,7 @@ package IU;
 import java.util.Scanner;
 
 
-public class Interfaz {
-    
+public class Interfaz {  
      public static void imprimirBienvenida () {
         System.out.println("Bienvenidos"); 
     }
