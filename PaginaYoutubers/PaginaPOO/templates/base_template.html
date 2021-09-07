@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="shortcut icon" href="{{ url_for("static", filename="img/logo.svg") }}"> 
 <!--   <meta name="description" content="Página web youtubers creada para el proyecto de poo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Brayan Maldonado, Luis Hernández, David Camelo, Andrés Galeanoo" /> -->
@@ -11,12 +12,135 @@
   <!-- <link rel="stylesheet" href="{{ url_for("static", filename="base.css") }}" /> -->
 
   <style>
+    
+    #contactanosnombre{
+      border-top: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #contactanoscorreo{
+      border-top: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #contactanosasunto{
+      border-top: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #contactanosmensaje{
+      border-bottom: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+
+    #titulocreapublicacion{
+      border-top: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #asignaturacreapublicacion{
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+      }
+    
+    #autorcreapublicacion{
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #temacreapublicacion{
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+    
+    #direccioncreapublicacion{
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #contenidocreapublicacion{
+      border-bottom: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+
+    #usuarioregistrarse{
+      border-top: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+    
+    #nombreregistrarse{
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+    
+    #correoregistrarse{
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+    
+    #contraseñaregistrarse{
+      border-bottom: 2px solid rgb(110, 105, 105);
+      border-left: 2px solid rgb(110, 105, 105);
+      border-right: 2px solid rgb(110, 105, 105); 
+      background-color: rgb(213, 214, 206);
+    }
+    
+    
+
+    #imagenasignatura{
+      padding-left: 50px;
+    }
+
+    #ytemb{
+      margin:auto;
+    }
+
+    div.uploader
+    {
+        display: block;
+        text-align: center;
+        font-size: 200%;
+    }
+    .uploader
+    {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    #loguito{
+      display:block;
+      margin:auto;
+    }
+
     #logo{
       padding-right: 5px;
   
     }
     #youacademicsize{
-      font-size: 43px;
+      font-size: 35px;
       padding-left: 10px;
       padding-bottom: 10px;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -25,12 +149,12 @@
 
     #YouAcademicTitle{
       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 22px;
+      font-size: 20px;
       padding-left: 20px;
     }   
 
     #BarraBuscar{
-      padding-top: 23px;
+      padding-top: 25px;
       padding-right: 20px;
       position: absolute;
       height:100%;
@@ -38,7 +162,19 @@
       right:20px;
     }
 
+    #botonenviar{
+      text-align: center;
+    }
+
     #botoniniciar{
+      text-align: center;
+    }
+
+    #botonregistrarse{
+      text-align: center;
+    }
+
+    #botoncrear{
       text-align: center;
     }
 
@@ -54,7 +190,7 @@
      border-bottom: 2px solid rgb(110, 105, 105);
      border-left: 2px solid rgb(110, 105, 105);
      border-right: 2px solid rgb(110, 105, 105); 
-     background-color: lightblue;
+     background-color:rgb(213, 214, 206);
    }
 
    #correo{
@@ -62,7 +198,7 @@
     border-top: 2px solid rgb(110, 105, 105);
     border-left: 2px solid rgb(110, 105, 105);
     border-right: 2px solid rgb(110, 105, 105);
-    background-color: lightblue;
+    background-color: rgb(213, 214, 206);
    }
 
     #formulario{
@@ -74,13 +210,21 @@
       text-align: center;
     }
 
+    #carrusel3{
+      height: 700px;
+    }
+
+    #carrusel2{
+      height: 700px;
+    }
+
     #carrusel1{
-      height: 800px;
+      height: 700px;
     }
     
     #asignaturas{
-      padding-top:150px;
-      padding-bottom:150px;
+      padding-top:50px;
+      padding-bottom:50px;
     }
     
     .text-center{
@@ -89,18 +233,16 @@
     }
 
     #about{
+      background-color: rgb(250, 247, 244);
       border: 3px solid rgb(209, 204, 204);
       padding-top: 50px;
       padding-bottom: 50px;
-    }
+    } 
 
     .contactanos{
       padding-top: 80px;
-    }
+    } 
     
-    #about{
-      background-color: rgb(250, 247, 244);
-    }
   </style>
 
 </head>

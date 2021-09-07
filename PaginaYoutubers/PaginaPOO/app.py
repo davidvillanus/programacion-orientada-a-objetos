@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, abort
 from flask_login import LoginManager, logout_user, current_user, login_user, login_required
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.urls import url_parse
+from werkzeug.utils import secure_filename
+import os
 
 from forms import ContactForm, SignupForm, PostForm, LoginForm
 
@@ -9,6 +11,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b23a5d1616bf319bc298105da20fe'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pi:lusho@186.80.128.29:5432/pi'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+app.config['UPLOAD_FOLDER'] = "./static/img/entradas"
 
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
@@ -26,11 +30,18 @@ def index():
         correo = form.correo.data
         asunto = form.asunto.data
         mensaje = form.mensaje.data
-    
         contact = Contact(nombre=nombre, correo=correo, asunto=asunto, mensaje=mensaje)
         contact.save()
 
     return render_template("index.html", posts=posts, form=form)
+
+@app.route("/search")
+def search():
+    dato = request.args.get('busqueda')
+    if dato:
+        post = Post.get_search(dato)
+    return render_template("search.html", post=post)
+
 
 @app.route("/p/<string:asign>")
 def category(asign):
@@ -74,8 +85,22 @@ def post_form(post_id):
         post = Post(user_id=current_user.id, title=title, content=content, asignatura=asignatura, tema=tema, autor=autor, url=url)
         post.save()
 
-        return redirect(url_for('index'))
+        return redirect(url_for('upload'))
     return render_template("admin/post_form.html", form=form)
+
+@app.route("/upload", methods=["GET", "POST"])
+def upload():
+    return render_template("admin/upload.html")
+
+@app.route("/uploader", methods=['POST'])
+def uploader():
+    post = Post.get_last()
+    ide = str(post.id)
+    if request.method == 'POST':
+        f = request.files['archivo']
+        filename = secure_filename(ide)
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return redirect(url_for('index'))       
 
 
 @app.route("/signup/", methods=["GET", "POST"])
@@ -135,7 +160,3 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
-
-
-if __name__ == '__name__':
-    app.run(debug=True)

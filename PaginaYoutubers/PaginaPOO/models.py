@@ -2,9 +2,12 @@ from flask import url_for
 from flask_login import UserMixin
 from slugify import slugify
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.sql.functions import ReturnTypeFromArgs
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
 
+class unaccent(ReturnTypeFromArgs):
+    pass
 
 class User(db.Model, UserMixin):
 
@@ -15,7 +18,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(256), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=False)
     nickname = db.Column(db.String(80), unique=True, nullable=False)
-    is_admin = db.Column(db.Boolean, default=True)
+    is_admin = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -54,6 +57,7 @@ class Post(db.Model):
     autor = db.Column(db.String(256), nullable=False)
     content = db.Column(db.Text)
     url = db.Column(db.String(256))
+    image_name = db.Column(db.String)
 
     def __repr__(self):
         return f'<Post {self.title}>'
@@ -63,6 +67,9 @@ class Post(db.Model):
             db.session.add(self)
         if not self.title_slug:
             self.title_slug = slugify(self.title)
+        if not self.image_name:
+            imgna = str(self.id)
+            self.image_name = imgna
 
         saved = False
         count = 0
@@ -95,12 +102,20 @@ class Post(db.Model):
 
     @staticmethod
     def get_all():
-        #return Post.query.all()
         return Post.query.distinct(Post.asignatura)
 
     @staticmethod
     def get_all_data():
         return Post.query.all()
+
+    @staticmethod
+    def get_last():
+        return Post.query.order_by(-Post.id).first()
+
+    @staticmethod
+    def get_search(data):
+        return Post.query.filter(unaccent(Post.title).ilike("%"+data+"%") | Post.title.ilike("%"+data+"%") | unaccent(Post.asignatura).ilike("%"+data+"%") | Post.asignatura.ilike("%"+data+"%") | unaccent(Post.autor).ilike("%"+data+"%") | Post.autor.ilike("%"+data+"%") | unaccent(Post.tema).ilike("%"+data+"%") | Post.tema.ilike("%"+data+"%")).all()
+
 
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
