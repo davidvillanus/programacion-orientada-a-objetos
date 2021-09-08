@@ -25,7 +25,7 @@ public class Prueba {
     Hamburguesa hamburguesa3 = new Hamburguesa();
     
     //intanciacion pizza
-    Pizza pizza1 = new Pizza("pizza de champi�ones",6000,true,null,true,450
+    Pizza pizza1 = new Pizza("pizza de champiñones",6000,true,null,true,450
     ,true,12,true,"normal","Queso","grande");
     Pizza pizza2 = new Pizza("pizza de carne",6000,true,null,true,650
     ,true,8,true,"Maiz","bocadillo","mediano");
@@ -135,15 +135,15 @@ public class Prueba {
                                             int sel = Interfaz.leerTeclado();
                                             switch (sel) {
                                                 case 1:
-                                                System.out.println(HamburguesaList.get("h1").getNombre()+" ha sido selecionada ");
+                                                System.out.println(HamburguesaList.get("h1").getNombre()+" ha sido seleccionada ");
                                                 hamselec.add(HamburguesaList.get("h1"));
                                                 break;
                                                 case 2:
-                                                System.out.println(HamburguesaList.get("h2").getNombre()+" ha sido selecionada ");
+                                                System.out.println(HamburguesaList.get("h2").getNombre()+" ha sido seleccionada ");
                                                 hamselec.add(HamburguesaList.get("h2"));
                                                 break;
                                                 case 3:
-                                                System.out.println(HamburguesaList.get("h3").getNombre()+" ha sido selecionada ");
+                                                System.out.println(HamburguesaList.get("h3").getNombre()+" ha sido seleccionada ");
                                                 hamselec.add(HamburguesaList.get("h3"));
                                                 break;
                                                 case 4:
@@ -178,15 +178,15 @@ public class Prueba {
                                             int sel= Interfaz.leerTeclado();
                                             switch (sel) {
                                                 case 1:
-                                                System.out.println(PizzaList.get("P1").getNombre()+" ha sido selecionada ");
+                                                System.out.println(PizzaList.get("P1").getNombre()+" ha sido seleccionada ");
                                                 pizselec.add(PizzaList.get("P1"));
                                                 break;
                                                 case 2:
-                                                System.out.println(PizzaList.get("P2").getNombre()+" ha sido selecionada ");
+                                                System.out.println(PizzaList.get("P2").getNombre()+" ha sido seleccionada ");
                                                 pizselec.add(PizzaList.get("P2"));
                                                 break;
                                                 case 3:
-                                                System.out.println(PizzaList.get("P3").getNombre()+" ha sido selecionada ");
+                                                System.out.println(PizzaList.get("P3").getNombre()+" ha sido seleccionada ");
                                                 pizselec.add(PizzaList.get("P3"));
                                                 break;
                                                 case 4:
@@ -240,15 +240,15 @@ public class Prueba {
                                             int sel = Interfaz.leerTeclado();
                                             switch (sel) {
                                                 case 1:
-                                                System.out.println(EnsaladaList.get(0).getNombre()+" ha sido selecionada ");
+                                                System.out.println(EnsaladaList.get(0).getNombre()+" ha sido seleccionada ");
                                                 enselec.add(EnsaladaList.get(0));
                                                 break;
                                                 case 2:
-                                                System.out.println(EnsaladaList.get(1).getNombre()+" ha sido selecionada ");
+                                                System.out.println(EnsaladaList.get(1).getNombre()+" ha sido seleccionada ");
                                                 enselec.add(EnsaladaList.get(1));
                                                 break;
                                                 case 3:
-                                                System.out.println(EnsaladaList.get(2).getNombre()+" ha sido selecionada ");
+                                                System.out.println(EnsaladaList.get(2).getNombre()+" ha sido seleccionada ");
                                                 enselec.add(EnsaladaList.get(2));
                                                 break;
                                                 case 4:
@@ -282,15 +282,15 @@ public class Prueba {
                                             int sel = Interfaz.leerTeclado();
                                             switch (sel) {
                                                 case 1:
-                                                System.out.println(avenaList.get(0).getNombre()+" ha sido selecionada ");
+                                                System.out.println(avenaList.get(0).getNombre()+" ha sido seleccionada ");
                                                 avselec.add(avenaList.get(0));
                                                 break;
                                                 case 2:
-                                                System.out.println(avenaList.get(1).getNombre()+" ha sido selecionada ");
+                                                System.out.println(avenaList.get(1).getNombre()+" ha sido seleccionada ");
                                                 avselec.add(avenaList.get(1));
                                                 break;
                                                 case 3:
-                                                System.out.println(avenaList.get(2).getNombre()+" ha sido selecionada ");
+                                                System.out.println(avenaList.get(2).getNombre()+" ha sido seleccionada ");
                                                 avselec.add(avenaList.get(2));
                                                 break;
                                                 case 4:

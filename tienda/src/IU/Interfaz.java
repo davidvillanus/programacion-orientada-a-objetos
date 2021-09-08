@@ -36,7 +36,7 @@ public class Interfaz {
                 System.out.println("0. Salir");
             }
             public static void sel(){
-                System.out.println("Selecciona la que quieras usando los numeros maximo 2");
+                System.out.println("Selecciona la que quieras usando los numeros. Máximo 2");
                 System.out.println("4. Retroceder");
                 System.out.println("0. Salir");
             }
