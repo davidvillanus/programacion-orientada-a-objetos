@@ -10,7 +10,7 @@
   {% for post in posts %}
   <div class="col">
       <div class="card shadow-sm">
-        <a href="{{ url_for('tema', asign=post.asignatura, autor=post.autor, tema=post.tema) }}"><img src="{{ url_for("static", filename="img/temas/" ~ post.tema ~ ".jpg" ) }}" alt="" width="400" height="400"></a>
+        <a href="{{ url_for('tema', asign=post.asignatura, autor=post.autor, tema=post.tema) }}"><img src="{{ url_for("static", filename="img/temas/" ~ post.tema ~ ".jpg" ) }}" alt="" width="400" height="400" class="centerimg"></a>
 
           <div class="card-body">
               <p class="card-text">Aquí encontrarás todo lo relacionado a la temática de {{ post.tema }} del autor {{ post.autor }} en la asignatura {{ post.asignatura }}. <br>¡A aprender!</p>

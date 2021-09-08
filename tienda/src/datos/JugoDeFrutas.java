@@ -6,10 +6,10 @@ public final class JugoDeFrutas extends Fabricado {
    String TipoDeEndulzante;
     boolean Leche;
     //constructores//
-    public JugoDeFrutas(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
+    public JugoDeFrutas(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamano,int Calorias,
     String TipoDeSabor,boolean Endulzante,boolean Pitillo,
     boolean ConPulpa,String TipoDeEndulzante,boolean leche){
-        super(Nombre,Precio,Stock,TemperaturaGradosC,Tamaño,Calorias,
+        super(Nombre,Precio,Stock,TemperaturaGradosC,Tamano,Calorias,
         TipoDeSabor,Endulzante,Pitillo);
         this.setConPulpa(ConPulpa);
         this.setTipoDeEndulzante(TipoDeEndulzante);

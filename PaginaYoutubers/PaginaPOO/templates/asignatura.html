@@ -10,7 +10,7 @@
   {% for post in posts %}
   <div class="col">
       <div class="card shadow-sm">
-        <a href="{{ url_for('autor', asign=post.asignatura, autor=post.autor) }}"><img id="imagenasignatura" src="{{ url_for("static", filename="img/autores/" ~ post.autor ~ ".jpg" ) }}" alt="" width="500" height="400" lign="center"></a>
+        <a href="{{ url_for('autor', asign=post.asignatura, autor=post.autor) }}"><img id="imagenasignatura" src="{{ url_for("static", filename="img/autores/" ~ post.autor ~ ".jpg" ) }}" alt="" width="500" height="400" class="centerimg"></a>
 
           <div class="card-body">
               <p style="text-align: center;" class="card-text">Aquí encontrarás todo lo relacionado al youtuber {{ post.autor }} en la asignatura {{ post.asignatura }}. <br>¡A aprender!</p>

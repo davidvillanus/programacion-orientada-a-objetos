@@ -21,7 +21,7 @@ public final class Hamburguesa extends NoVegano {
     }
     @Override
     public void Descripcion(){
-        final String descripcion = "Una hamburguesa es un s√°ndwich hecho a base de carne molida o de origen vegetal, aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque tambi√©n puede fre√≠rse u hornearse.";
+        final String descripcion = "Una hamburguesa es un sandwich hecho a base de carne molida o de origen vegetal, aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque tambiÈn puede freÌrse u hornearse.";
         System.out.println(descripcion);
     }
     //METODO TO STRING//

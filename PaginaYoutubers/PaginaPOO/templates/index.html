@@ -47,7 +47,7 @@
     {% for post in posts %}
     <div class="col">
         <div class="card shadow-sm">
-          <a href="{{ url_for('category', asign=post.asignatura) }}"><img src="{{ url_for("static", filename="img/asignaturas/" ~ post.asignatura ~ ".jpg" ) }}" alt="" width="400" height="400"></a>
+          <a href="{{ url_for('category', asign=post.asignatura) }}"><img src="{{ url_for("static", filename="img/asignaturas/" ~ post.asignatura ~ ".jpg" ) }}" alt="" width="400" height="400" class="centerimg"></a>
 
             <div class="card-body">
                 <p class="card-text">Aquí encontrarás todo lo relacionado a la asignatura {{ post.asignatura }}. <br>¡A aprender!</p>

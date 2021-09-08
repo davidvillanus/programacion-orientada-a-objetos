@@ -18,7 +18,7 @@
         <a href="{{ url_for('show_post', slug=post.title_slug, asign=post.asignatura, autor=post.autor, tema=post.tema) }}" class="stretched-link">Seguir leyendo</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <a href="{{ url_for('show_post', slug=post.title_slug, asign=post.asignatura, autor=post.autor, tema=post.tema) }}"><img src="{{ url_for("static", filename="img/entradas/" ~ post.id) }}" alt="" width="300" height="220"></a>
+        <a href="{{ url_for('show_post', slug=post.title_slug, asign=post.asignatura, autor=post.autor, tema=post.tema) }}"><img src="{{ url_for("static", filename="img/entradas/" ~ post.id) }}" alt="" width="300" height="220" class="centerimg"></a>
 
       </div>
     </div>

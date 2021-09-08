@@ -6,10 +6,10 @@ public final class Cerveza extends Prefabricado {
       int PorcentajeDeAlcohol;
       boolean EnJarra;
     //constructores//
-    public Cerveza(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
+    public Cerveza(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamano,int Calorias,
     String Marcar,String Presentacion,boolean ConGas,
     int CantidadDeMililitros,int PorcentajeDeAlcohol,boolean EnJarra){
-        super(Nombre,Precio,Stock,TemperaturaGradosC,Tamaño,Calorias,Marcar,Presentacion,ConGas);
+        super(Nombre,Precio,Stock,TemperaturaGradosC,Tamano,Calorias,Marcar,Presentacion,ConGas);
         this.setCantidadDeMililitros(CantidadDeMililitros);
         this.setPorcentajeDeAlcohol(PorcentajeDeAlcohol);
         this.setEnJarra(EnJarra);

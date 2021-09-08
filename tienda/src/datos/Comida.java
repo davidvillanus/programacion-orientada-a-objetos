@@ -21,8 +21,8 @@ public abstract class Comida extends Productos {
     public String toString() {
         return super.toString()+
         "Ingredientes: "+this.getIngredientes()+"\n"+
-        "ParaLlevar"+this.ToStringParallevar()+"\n"+
-        "Calorias"+this.getCalorias()+"\n"    
+        "ParaLlevar: "+this.ToStringParallevar()+"\n"+
+        "Calorias: "+this.getCalorias()+"\n"    
         ;
     }
      //metodos

@@ -5,11 +5,10 @@ public final class Gaseosa extends Prefabricado {
     int CantidadDeLitros;
     int NumeroDeVasos;
     String Sabor;
+    
     //constructores//
-    public Gaseosa(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamaño,int Calorias,
-    String Marcar,String Presentacion,boolean ConGas,
-    int CantidadDeLitros,int NumeroDeVasos,String Sabor){
-        super(Nombre,Precio,Stock,TemperaturaGradosC,Tamaño,Calorias,Marcar,Presentacion,ConGas);
+    public Gaseosa(String Nombre,long Precio,boolean Stock,int TemperaturaGradosC,String Tamano,int Calorias, String Marcar,String Presentacion,boolean ConGas, int CantidadDeLitros,int NumeroDeVasos,String Sabor){
+        super(Nombre,Precio,Stock,TemperaturaGradosC,Tamano,Calorias,Marcar,Presentacion,ConGas);
         this.setCantidadDeLitros(CantidadDeLitros);
         this.setNumeroDeVasos(NumeroDeVasos);
         this.setSabor(Sabor);
