@@ -9,7 +9,7 @@ public class Interfaz {
     public static int leerTeclado (){
         Scanner lector=new Scanner(System.in);
         int num= lector.nextInt();
-        lector.close();
+        //lector.close();
         return num;
         
         

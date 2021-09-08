@@ -101,224 +101,196 @@ public class Pueba {
     cervezaList.add(cerveza2);
     cervezaList.add(cerveza3);
 
-    Interfaz.Indice();
-    int indice = Interfaz.leerTeclado();
-    switch (indice) {
-        case 1:
-            Interfaz.Productos();
-            int producto = Interfaz.leerTeclado();
-            switch (producto) {
-                case 1:
-                    Interfaz.NoVeg();
-                    int NoVeg = Interfaz.leerTeclado();
-                    switch (NoVeg) {
+    boolean salir = false;
+    
+   
+    while(!salir){
+
+        Interfaz.Indice();
+        int indice = Interfaz.leerTeclado();
+        switch (indice) {
+            case 1:
+                boolean salir2 = false;
+                while(!salir2){
+                    Interfaz.Productos();
+                    int producto = Interfaz.leerTeclado();
+                    switch (producto) {
                         case 1:
-                            System.out.println("Hamburguesas: ");
-                            System.out.println(hamburguesa1.toString());
-                            System.out.println(hamburguesa2.toString());
-                            System.out.println(hamburguesa3.toString());
+                            boolean salir4 = false;
+                            while (!salir4){
+                                Interfaz.NoVeg();
+                                int NoVeg = Interfaz.leerTeclado();
+                                switch (NoVeg) {
+                                    case 1:
+                                        System.out.println("Hamburguesas: ");
+                                        System.out.println(hamburguesa1.toString());
+                                        System.out.println(hamburguesa2.toString());
+                                        System.out.println(hamburguesa3.toString());
+                                    break;
+                                    case 2:
+                                        System.out.println("Pizzas: ");
+                                        System.out.println(pizza1.toString());
+                                        System.out.println(pizza2.toString());
+                                        System.out.println(pizza3.toString());
+                                    break;
+                                    case 3:
+                                        salir4 = true;
+                                    break;
+                                    case 0:
+                                        System.out.println("Hasta luego!");
+                                        salir4 = true;
+                                        salir2 = true;
+                                        salir = true;
+                                    break;
+                                    default:
+                                        System.out.println("ERROR");
+                                    break;
+                                }
+                            }
                         break;
                         case 2:
-                            System.out.println("Pizzas: ");
-                            System.out.println(pizza1.toString());
-                            System.out.println(pizza2.toString());
-                            System.out.println(pizza3.toString());
+                            boolean salir5 = false;
+                            while (!salir5) {
+                                Interfaz.Veg();
+                                int Veg = Interfaz.leerTeclado();
+                                switch (Veg) {
+                                    case 1:
+                                        System.out.println("Ensalada Cob: ");
+                                        System.out.println(ensalada1.toString());
+                                        System.out.println(ensalada2.toString());
+                                        System.out.println(ensalada3.toString());
+                                    break;
+                                    case 2:
+                                        salir5 = true;
+                                    break;
+                                    case 0:
+                                        System.out.println("Hasta luego!");
+                                        salir5 = true;
+                                        salir2 = true;
+                                        salir = true;
+                                    break;
+                                    default:
+                                        System.out.println("ERROR");
+                                    break;
+                                }
+                            }
                         break;
                         case 3:
-                            // RETROCEDER
+                            salir2 = true;
                         break;
                         case 0:
-                            // SALIR
+                            System.out.println("Hasta luego!");
+                            salir2 = true;
+                            salir = true;
                         break;
                         default:
-                            System.out.println("ERROR");
+                        System.out.println("ERROR");
                         break;
                     }
-                break;
-                case 2:
-                    Interfaz.Veg();
-                    int Veg = Interfaz.leerTeclado();
-                    switch (Veg) {
+                }
+            break;
+            case 2:
+                boolean salir3 = false;
+                while (!salir3){
+                    Interfaz.Bebidas();
+                    int bebida = Interfaz.leerTeclado();
+                    switch (bebida) {
                         case 1:
-                            System.out.println("Ensalada Cob: ");
-                            System.out.println(ensalada1.toString());
-                            System.out.println(ensalada2.toString());
-                            System.out.println(ensalada3.toString());
+                            boolean salir6 = false;
+                            while (!salir6){
+                                Interfaz.NoArt();
+                                int NoArt = Interfaz.leerTeclado();
+                                switch (NoArt) {
+                                    case 1:
+                                        System.out.println("Avena con frutas: ");
+                                        System.out.println(Avena1.toString());
+                                        System.out.println(Avena2.toString());
+                                        System.out.println(Avena3.toString());
+                                    break;
+                                    case 2:
+                                        System.out.println("Jugos: ");
+                                        System.out.println(jugo1.toString());
+                                        System.out.println(jugo2.toString());
+                                        System.out.println(jugo3.toString());
+                                    break;
+                                    case 3:
+                                        salir6 = true;
+                                    break;
+                                    case 0:
+                                        System.out.println("Hasta luego!");
+                                        salir6 = true;
+                                        salir3 = true;
+                                        salir = true;
+                                    break;
+                                    default:
+                                        System.out.println("ERROR");
+                                    break;
+                                }
+                            }
                         break;
                         case 2:
-                            // RETROCEDER
+                            boolean salir7 = false;
+                            while (!salir7){
+                                Interfaz.Art();
+                                int Art = Interfaz.leerTeclado();
+                                switch (Art) {
+                                    case 1:
+                                        System.out.println("Gaseosas: ");
+                                        System.out.println(gaseosa1.toString());
+                                        System.out.println(gaseosa2.toString());
+                                        System.out.println(gaseosa3.toString());
+                                    break;
+                                    case 2:
+                                        System.out.println("Cervezas: ");
+                                        System.out.println(cerveza1.toString());
+                                        System.out.println(cerveza2.toString());
+                                        System.out.println(cerveza3.toString());
+                                    break;
+                                    case 3:
+                                        salir7 = true;
+                                    break;
+                                    case 0:
+                                        System.out.println("Hasta luego!");
+                                        salir7 = true;
+                                        salir3 = true;
+                                        salir = true;
+                                    break;
+                                    default:
+                                        System.out.println("ERROR");
+                                    break;
+                                }
+                            }
+                        break;
+                        case 3:
+                            salir3 = true;
                         break;
                         case 0:
-                            // SALIR
+                            System.out.println("Hasta luego!");
+                            salir3 = true;
+                            salir = true;
                         break;
                         default:
                             System.out.println("ERROR");
                         break;
                     }
-                break;
-                case 3:
-                // RETROCEDER
-                break;
-                case 0:
-                // SALIR
-                break;
-                default:
+                }
+            break;
+            case 0:
+                System.out.println("Hasta luego!");
+                salir = true;
+            break;
+            default:
                 System.out.println("ERROR");
-                break;
-            }
-        break;
-        case 2:
-            Interfaz.Bebidas();
-            int bebida = Interfaz.leerTeclado();
-            switch (bebida) {
-                case 1:
-                    Interfaz.NoArt();
-                    int NoArt = Interfaz.leerTeclado();
-                    switch (NoArt) {
-                        case 1:
-                            System.out.println("Avena con frutas: ");
-                            System.out.println(Avena1.toString());
-                            System.out.println(Avena2.toString());
-                            System.out.println(Avena3.toString());
-                        break;
-                        case 2:
-                            System.out.println("Jugos: ");
-                            System.out.println(jugo1.toString());
-                            System.out.println(jugo2.toString());
-                            System.out.println(jugo3.toString());
-                        break;
-                        case 3:
-                            // RETROCEDER
-                        break;
-                        case 0:
-                            // SALIR
-                        break;
-                        default:
-                            System.out.println("ERROR");
-                        break;
-                    }
-                break;
-                case 2:
-                    Interfaz.Art();
-                    int Art = Interfaz.leerTeclado();
-                    switch (Art) {
-                        case 1:
-                            System.out.println("Gaseosas: ");
-                            System.out.println(gaseosa1.toString());
-                            System.out.println(gaseosa2.toString());
-                            System.out.println(gaseosa3.toString());
-                        break;
-                        case 2:
-                            System.out.println("Cervezas: ");
-                            System.out.println(cerveza1.toString());
-                            System.out.println(cerveza2.toString());
-                            System.out.println(cerveza3.toString());
-                        break;
-                        case 3:
-                            // RETROCEDER
-                        break;
-                        case 0:
-                            // SALIR
-                        break;
-                        default:
-                            System.out.println("ERROR");
-                        break;
-                    }
-                break;
-                case 3:
-                    // RETROCEDER
-                break;
-                case 0:
-                    // SALIR
-                break;
-                default:
-                    System.out.println("ERROR");
-                break;
-            }
-        break;
-        case 0:
-            // SALIR
-        break;
-        default:
-            System.out.println("ERROR");
-        break;
+            break;
+        }
+
     }
 
-
-
-
-
-
-    // int opcion= Interfaz.leerTeclado();
-    // switch (opcion) {
-    //     case 1:
-    //         System.out.println("lista de Productos");
-    //         System.out.println("No veganos");
-    //         
-
-
-    //         System.out.println("Avenas con fruta");
-
-    //         System.out.println("Bebidas");
-    //         System.out.println("Gaseosas");
-    //         System.out.println(gaseosa1.toString());
-    //         System.out.println(gaseosa2.toString());
-    //         System.out.println(gaseosa3.toString());
-    //         System.out.println("Cervezas");
-    //         System.out.println(cerveza1.toString());
-    //         System.out.println(cerveza2.toString());
-    //         System.out.println(cerveza3.toString());
-    //         System.out.println("Jugos");
-    //         break;
-        // case 14:
-        //     System.out.println("lista de Productos");
-        //     System.out.println("Hamburguesas");
-        //     System.out.println(hamburguesa1.toString());
-        //     System.out.println(hamburguesa2.toString());
-        //     System.out.println(hamburguesa3.toString());
-        //     break;
-        // case 2:
-        //     System.out.println("Pizzas");
-        //     System.out.println(pizza1.toString());
-        //     System.out.println(pizza2.toString());
-        //     System.out.println(pizza3.toString());
-        //     break;
-        // case 3:
-        //     System.out.println("Ensaladas");
-        //     System.out.println(ensalada1.toString());
-        //     System.out.println(ensalada2.toString());
-        //     System.out.println(ensalada3.toString());
-        //     break;
-        // case 4:
-        //     System.out.println("Avenas con fruta");
-        //     System.out.println(Avena1.toString());
-        //     System.out.println(Avena2.toString());
-        //     System.out.println(Avena3.toString());
-        //     break;
-        // case 5:
-        //     System.out.println(NotaJl.toString());
-        //     System.out.println(NotaJn.toString());
-        //     System.out.println(NotaSinId.toString());
-        //     break;
-        // case 6:
-        //     System.out.println(N1.toString());
-        //     System.out.println(N2.toString());
-        //     System.out.println(sinDefinir.toString());
-        //     break;
-        // case 7:
-        //     System.out.println(creditosJulieta.toString());
-        //     System.out.println(creditosJuan.toString());
-        //     System.out.println(creditosSinId.toString());
-        //     break;
-    //     default:
-    //         System.out.println("ERROR");
-    //         break;
-    // }
     
 
 
-    }
 
+    }
 }
 
     
