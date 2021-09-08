@@ -18,6 +18,7 @@ public class Interfaz {
     public static void Indice(){
         System.out.println("1. Productos");
         System.out.println("2. Bebidas");
+        System.out.println("3. seleccionados");
         System.out.println("0. Salir");
     }
 
@@ -34,10 +35,22 @@ public class Interfaz {
                 System.out.println("3. Retroceder");
                 System.out.println("0. Salir");
             }
-
-            public static void Veg(){
-                System.out.println("1. Ensalada Cobb");
+            public static void sel(){
+                System.out.println("Selecciona la que quieras usando los numeros maximo 2");
+                System.out.println("4. Retroceder");
+                System.out.println("0. Salir");
+            }
+            public static void sel2(){
+                System.out.println("Productos seleccionados");
+                System.out.println("1. Ver lista");
                 System.out.println("2. Retroceder");
+                System.out.println("0. Salir");
+            }
+            
+            public static void Veg(){
+                System.out.println("1. Ensalada");
+                System.out.println("2. Avena con fruta");
+                System.out.println("3. Retroceder");
                 System.out.println("0. Salir");
             }
 
@@ -50,9 +63,8 @@ public class Interfaz {
         }
 
             public static void NoArt(){
-                System.out.println("1. Avena con frutas");
-                System.out.println("2. Jugos");
-                System.out.println("3. Retroceder");
+                System.out.println("1. Jugos");
+                System.out.println("2. Retroceder");
                 System.out.println("0. Salir");
             }
 
